@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  background-image: url(/img/medicamentos.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.estudiante {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estudiante h2 {
+  margin-top: 0;
+}
+
+.descripcion {
+  display: none;
+}
+
+.estudiante:hover .descripcion {
+  display: block;
+}
+
+.imagen-hover {
+  position: absolute;
+  bottom: -100%; 
+  left: 0;
+  width: 100%;
+  height: 200px; 
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease, bottom 0.3s ease; 
+}
+
+.estudiante:hover .imagen-hover {
+  opacity: 1;
+}
+
+.imagen-hover img {
+  width: 100%; 
+  height: auto; 
+}
