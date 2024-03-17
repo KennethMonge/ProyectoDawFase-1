@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #7A538A;
+    height: 100vh;
+}
+
+.Formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.Formulario h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.Formulario form {
+    padding:  0 40px;
+    box-sizing: border-box;
+}
+
+.Username, .Contraseña {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.Username input, .Contraseña input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.Username label, .Contraseña label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.Username::before, .Contraseña::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0; /* Cambiado a 0 para la animación */
+    height: 2px;
+    background: #6c3483;
+    transition: .5s;
+}
+
+.Recordar {
+    margin: -5px 0 20px 5px;
+    color: #6c3483;
+    cursor: pointer;
+}
+
+.Recordar:hover {
+    text-decoration: underline;
+}
+
+.Username input:focus ~ label,
+.Contraseña input:focus ~ label {
+    top: -5px;
+    color: #6c3483;
+}
+
+.Username input:focus ~ span::before,
+.Contraseña input:focus ~ span::before {
+    width: 100%;
+}
+
+.Username input:not(:placeholder-shown) + label {
+    top: -5px; /* Mueve el label hacia arriba cuando hay contenido en el input */
+    color: #6c3483; /* Cambiar el color del label cuando hay contenido */
+}
+
+.Contraseña input:not(:placeholder-shown) + label {
+    top: -5px; /* Mueve el label hacia arriba cuando hay contenido en el input */
+    color: #6c3483; /* Cambiar el color del label cuando hay contenido */
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid purple; /* Cambiado para resaltar */
+    background: #6c3483;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: .5s;
+}
+
+input[type="submit"]:hover {
+    background: purple; /* Cambiado para resaltar */
+}
+
+.Registrar {
+    margin: 30px 0;
+    text-align: center;
+    color: black;
+}
+
+.Registrar a {
+    color: #6c3483;
+    text-decoration: none;
+}
+
+.Registrar a:hover {
+    text-decoration: underline;
+}
