@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- Codificación de caracteres para el documento -->
+    <meta charset="utf-8">
+    <!-- Título del documento -->
+    <title>Medicamentos</title>
+    <!-- Importación de archivos CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/LOGO-SINTWIN-PNG.png" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Bienvenida</a></li>
+                <li><a href="medicamentos.html">Medicamentos</a></li>
+                <li><a href="Contactanos.html">Contacto</a></li>
+                <li><a href="integrantes.html">Creadores</a></li>
+                <li><a href="historial.html">Historial</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- Contenido principal del documento -->
+    <main class="container">
+        <!-- Título del contenido principal -->
+        <h3 class="center-align">Administrar Medicamentos</h3>
+        <div class="row">
+            <div class="input-field center-align col s12 m4">
+                <a onclick="openCreate()" class="btn-floating waves-effect indigo tooltipped" data-tooltip="Crear">
+                    <i class="material-icons">add</i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tabla para mostrar los registros existentes -->
+        <table class="highlight">
+            <!-- Cabeza de la tabla para mostrar los títulos de las columnas -->
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>TIPO</th>
+                    <th>DOSIS</th>
+                    <th>FECHA INICIO TRATAMIENTO</th>
+                    <th>NOTAS/DESCRIPCION</th>
+                    <th class="actions-column">ACCIONES</th>
+                </tr>
+            </thead>
+            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+            <tbody id="tbody-rows"></tbody>
+        </table>
+
+        <!-- Componente Modal para mostrar una caja de diálogo -->
+        <div id="save-modal" class="modal">
+            <!-- Enlace para cerrar el componente Modal -->
+            <div class="row right">
+                <a class="black-text tooltipped modal-close" data-tooltip="Cerrar">
+                    <i class="small material-icons">close</i>
+                </a>
+            </div>
+            <!-- Contenido del componente Modal -->
+            <div class="modal-content">
+                <!-- Título para la caja de diálogo -->
+                <h4 id="modal-title" class="center-align"></h4>
+                <!-- Formulario para crear o actualizar un registro -->
+                <form class="row" method="post" id="save-form" enctype="multipart/form-data">
+                    <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                    <input class="hide" type="number" id="id" name="id">
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">note_add</i>
+                        <input id="nombre" type="text" name="nombre" class="validate" required>
+                        <label for="nombre">Nombre</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">description</i>
+                        <input id="tipo" type="text" name="tipo" class="validate" required>
+                        <label for="tipo">Tipo</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">description</i>
+                        <input id="Dosis" type="text" name="Dosis" class="validate" required>
+                        <label for="Dosis">Dosis</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">description</i>
+                        <input id="Fecha-Inicio" type="text" name="Fecha-Inicio" class="validate" required>
+                        <label for="Fecha-Inicio">Fecha Inicio Tratamiento</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">description</i>
+                        <input id="Notas-Descripcion" type="text" name="Notas-Descripcion" class="validate" required>
+                        <label for="Notas-Descripcion">Notas/Descripcion</label>
+                    </div>
+                    <div class="col s12 center-align">
+                        <button type="reset" class="btn-floating waves-effect grey tooltipped" data-tooltip="Reiniciar">
+                            <i class="material-icons">autorenew</i>
+                        </button>
+                        <button type="submit" class="btn-floating waves-effect blue tooltipped" data-tooltip="Guardar">
+                            <i class="material-icons">save</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="js/medicamentos.js"></script>
+</body>
+
+</html>
